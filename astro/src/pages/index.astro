@@ -2,7 +2,6 @@
 import fetchApi from "../lib/strapi";
 import type Article from "../interfaces/article";
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 
 const articles = await fetchApi<Article[]>({
   endpoint: "articles",
@@ -10,53 +9,78 @@ const articles = await fetchApi<Article[]>({
 });
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-    <p>Premier article</p>
-    <article>
-      <h2>{articles[0].attributes.title}</h2>
-    </article>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://docs.astro.build/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
-      />
-    </ul>
+<Layout title="Homi by Justine">
+  <main class="overflow-x-hidden">
+	<section class="bg-quaternary min-h-[90dvh] flex">
+		<div class="overflow-x-hidden">
+			<div class="absolute h-[400px] w-[400px] -top-24">
+				<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="relative text-primary">
+					<path fill="currentColor" d="M21.6,-39.6C25.4,-35.3,24.1,-24.2,33.3,-16.5C42.5,-8.7,62.2,-4.4,70,4.5C77.8,13.4,73.8,26.8,62.7,31.3C51.6,35.8,33.6,31.3,21.9,40.4C10.3,49.5,5.2,72.1,-1.2,74.2C-7.7,76.4,-15.3,58.1,-25.8,48.4C-36.3,38.6,-49.5,37.5,-54.5,30.8C-59.5,24.2,-56.2,12.1,-53.1,1.8C-49.9,-8.4,-46.9,-16.9,-45,-28.8C-43,-40.8,-42.2,-56.2,-34.9,-58.5C-27.6,-60.9,-13.8,-50,-2.4,-45.8C8.9,-41.6,17.8,-44,21.6,-39.6Z" transform="translate(100 100)" />
+				</svg>
+				<div class="relative bg-secondary h-16 w-16 rounded-full -top-32 left-48" />
+			</div>
+			<div class="absolute h-[400px] w-[400px] -left-36 top-52">
+				<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="relative text-tertiary">
+					<path fill="currentColor" d="M43.2,-74.2C54.7,-68.1,62,-54,64.3,-40.4C66.6,-26.7,64,-13.3,64.2,0.1C64.4,13.5,67.4,27.1,63.1,37.4C58.8,47.6,47.2,54.7,35.5,58.5C23.7,62.4,11.9,63.2,-2.3,67.3C-16.5,71.3,-33.1,78.6,-41.5,72.8C-49.9,67,-50.1,48,-50.8,33.7C-51.5,19.4,-52.7,9.7,-56,-1.9C-59.3,-13.5,-64.8,-27,-61.9,-37.6C-59.1,-48.2,-47.9,-55.9,-36.2,-61.9C-24.4,-67.9,-12.2,-72.4,1.8,-75.5C15.8,-78.6,31.6,-80.4,43.2,-74.2Z" transform="translate(100 100)" />
+				</svg>
+				<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="relative text-secondary -top-[75%]">
+					<path fill="transparent" stroke="currentColor" d="M26,14.6C13.7,36.4,-30.2,39.6,-39.8,19.4C-49.4,-0.8,-24.7,-44.3,-2.8,-45.9C19.2,-47.5,38.4,-7.1,26,14.6Z" transform="translate(100 100)" />
+				</svg>
+			</div>
+			<div class="absolute h-[400px] w-[400px] -right-36">
+				<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="relative text-tertiary">
+					<path fill="currentColor" d="M44.2,-74.9C55.7,-69.9,62.3,-54.9,64.7,-40.7C67,-26.5,65.1,-13.3,63.9,-0.7C62.8,12,62.5,23.9,58.1,34.5C53.7,45.1,45.2,54.4,34.9,57.1C24.5,59.7,12.3,55.8,1.6,52.9C-9,50.1,-17.9,48.3,-26.2,44.5C-34.5,40.6,-42.1,34.6,-51.3,26.9C-60.5,19.1,-71.3,9.6,-74.7,-2C-78.2,-13.5,-74.3,-27.1,-68.6,-41C-62.9,-54.8,-55.5,-69.1,-43.8,-73.8C-32.1,-78.6,-16,-73.9,0.2,-74.2C16.4,-74.5,32.7,-79.8,44.2,-74.9Z" transform="translate(100 100)" />
+				</svg>
+				<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="relative text-secondary -top-[80%]">
+					<path fill="transparent" stroke="currentColor" d="M50.1,-6C50.1,21.2,25,42.5,-0.8,42.5C-26.6,42.5,-53.2,21.2,-53.2,-6C-53.2,-33.2,-26.6,-66.4,-0.8,-66.4C25,-66.4,50.1,-33.2,50.1,-6Z" transform="translate(100 100)" />
+				</svg>
+			</div>
+			<div class="absolute h-[400px] w-[400px] -right-16 top-80">
+				<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="relative text-primary">
+					<path fill="currentColor" d="M23,-40.1C33.9,-33.6,49.7,-35.7,54.6,-30.5C59.4,-25.2,53.3,-12.6,54,0.4C54.7,13.4,62.2,26.8,61,38.4C59.8,49.9,49.9,59.6,38.3,68.1C26.6,76.5,13.3,83.9,-1.5,86.5C-16.3,89.1,-32.7,87,-46.1,79.6C-59.6,72.1,-70.1,59.4,-67.9,45.2C-65.7,31.1,-50.7,15.5,-47.9,1.6C-45.1,-12.3,-54.5,-24.6,-51.7,-30C-48.8,-35.3,-33.7,-33.7,-23,-40.3C-12.4,-47,-6.2,-61.8,-0.1,-61.7C6.1,-61.6,12.1,-46.5,23,-40.1Z" transform="translate(100 100)" />
+				</svg>
+				<div class="relative bg-secondary h-16 w-16 rounded-full -top-20 left-48" />
+			</div>
+		</div>
+		<div class="max-w-screen-lg mx-auto my-auto py-12 px-24">
+			<h1 class="text-7xl uppercase text-center font-display font-semibold">Home-Organising & Minimalisme</h1>
+			<div class="flex justify-center bg-secondary w-fit gap-[0.1rem] mx-auto mt-4 font-semibold">
+				<div class="bg-quaternary px-10">Projet en cours de développement</div>
+				<div class="bg-quaternary px-10">Début d'activité Janvier 2025</div>
+			</div>
+		</div>
+	</section>
+	<section class="bg-primary text-white">
+		<div class="max-w-screen-lg mx-auto py-12 px-24">
+			<a href="blog/1">Blog</a>
+		</div>
+	</section>
+	<section class="bg-quaternary">
+		<div class="max-w-screen-lg mx-auto py-12 px-24">
+			<blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste soluta quas perspiciatis molestias harum rem quia eaque tenetur, nisi sequi quaerat, illum alias repellendus ullam explicabo libero ipsum recusandae itaque.</blockquote>
+			<small class="italic text-right">Author of the quote</small>
+		</div>
+	</section>
+	<section class="bg-secondary">
+		<div class="max-w-screen-lg mx-auto py-12 px-24">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
+		</div>
+	</section>
+	<section class="bg-tertiary">
+		<div class="max-w-screen-lg mx-auto py-12 px-24">
+			<div class="flex gap-8">
+				<div class="bg-tertiary-dark h-80 w-80 rounded"></div>
+				<div class="bg-tertiary-dark h-80 w-80 rounded"></div>
+				<div class="bg-tertiary-dark h-80 w-80 rounded"></div>
+			</div>
+		</div>
+	</section>
   </main>
 </Layout>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
-    height: auto;
-    z-index: -1;
-  }
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
-  }
-</style>

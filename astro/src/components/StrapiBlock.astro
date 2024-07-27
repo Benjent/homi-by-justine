@@ -1,0 +1,35 @@
+---
+import StrapiSpan from "./StrapiSpan.astro";
+import type { StrapiRichTextBody } from "../interfaces/strapi";
+
+interface Props {
+  block: StrapiRichTextBody[0];
+}
+
+// TODO create a StrapiChild.astro component which is either a TextNode or a Link
+
+const { block } = Astro.props;
+---
+
+<>
+  <!-- h1 should not be used as it is reserved for page title -->
+  {block.type === "heading" && block.level === 1 && <h1>{block.children.map((child) => child.type === "text" && <StrapiSpan span={child} />)}</h1>}
+  {block.type === "heading" && block.level === 2 && <h2>{block.children.map((child) => child.type === "text" && <StrapiSpan span={child} />)}</h2>}
+  {block.type === "heading" && block.level === 3 && <h3>{block.children.map((child) => child.type === "text" && <StrapiSpan span={child} />)}</h3>}
+  {block.type === "heading" && block.level === 4 && <h4>{block.children.map((child) => child.type === "text" && <StrapiSpan span={child} />)}</h4>}
+  {block.type === "heading" && block.level === 5 && <h5>{block.children.map((child) => child.type === "text" && <StrapiSpan span={child} />)}</h5>}
+  {block.type === "heading" && block.level === 6 && <h6>{block.children.map((child) => child.type === "text" && <StrapiSpan span={child} />)}</h6>}
+
+  {block.type === "paragraph" && <p>{block.children.map((child) => child.type === "link" ? <a href={child.url}>{child.children.map((grandChild) => grandChild.type === "text" && <StrapiSpan span={grandChild} />)}</a> : <StrapiSpan span={child} />)}</p>}
+
+  {block.type === "quote" && <blockquote>{block.children.map((child) => child.type === "text" && <StrapiSpan span={child} />)}</blockquote>}
+
+  {block.type === "list" && block.format === "ordered" && <ol>{block.children.map((child) => child.type === "list-item" && <li>{child.children.map((grandChild) => grandChild.type === "text" && <StrapiSpan span={grandChild} />)}</li>)}</ol>}
+  {block.type === "list" && block.format === "unordered" && <ul>{block.children.map((child) => child.type === "list-item" && <li>{child.children.map((grandChild) => grandChild.type === "text" && <StrapiSpan span={grandChild} />)}</li>)}</ul>}
+
+  {block.type === "code" && <code>{block.children.map((child) => child.type === "text" && <StrapiSpan span={child} />)}</code>}
+
+  {block.type === "image" && <img src={block.image.url} alt={block.image.alternativeText} />}
+
+  {block.type === "link" && <a href={block.url}>{block.children.map((child) => child.type === "text" && <StrapiSpan span={child} />)}</a>}
+</>

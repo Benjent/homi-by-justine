@@ -1,0 +1,13 @@
+---
+import type { TextNode } from "../interfaces/strapi";
+
+interface Props {
+  span: TextNode
+}
+
+const { span } = Astro.props;
+---
+
+<span class={`${(span.italic && "italic") ?? ''} ${(span.bold && "font-bold") ?? ''} ${(span.strikethrough && "line-through") ?? ''} ${(span.underline && "underline") ?? ''}`}>
+  {span.text}
+</span>
