@@ -1,5 +1,4 @@
 ---
-import { marked } from "marked";
 import type Article from "../../interfaces/article";
 import Layout from "../../layouts/Layout.astro";
 import fetchApi from "../../lib/strapi";
@@ -17,12 +16,9 @@ export async function getStaticPaths() {
   }));
 }
 const article = Astro.props;
-// const body = article.attributes.body && marked.parse(article.attributes.body)
 ---
 
 <Layout title={article.attributes.title}>
   <h1>{article.attributes.title}</h1>
-  <!-- <article set:html={body} /> -->
-   <!-- <article>{article.attributes.body[0].children[0]}</article> -->
    <article>{article.attributes.body.map((block) => <StrapiBlock block={block} />)}</article>
 </Layout>
