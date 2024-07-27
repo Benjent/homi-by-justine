@@ -4,13 +4,13 @@ import fetchApi from "../../lib/strapi";
 import type Article from "../../interfaces/article";
 import Layout from "../../layouts/Layout.astro";
 
-export async function getStaticPaths({ paginate }) {
+export const getStaticPaths = (async ({ paginate }) => {
   const articles = await fetchApi<Article[]>({
     endpoint: "articles",
     wrappedByKey: "data",
   });
   return paginate(articles, { pageSize: 2 });
-}
+}) satisfies GetStaticPaths
 
 const { page } = Astro.props;
 ---
