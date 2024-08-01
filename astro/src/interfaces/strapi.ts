@@ -1,5 +1,3 @@
-type Modifier = "bold" | "italic" | "underline" | "strikethrough" | "code";
-
 export interface TextNode {
   type: "text";
   text: string;

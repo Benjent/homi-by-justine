@@ -10,9 +10,9 @@ const articles = await fetchApi<Article[]>({
 ---
 
 <Layout title="Homi by Justine">
-  <main class="overflow-x-hidden">
+  <main>
 	<section class="bg-quaternary min-h-[90dvh] flex">
-		<div class="overflow-x-hidden">
+		<div>
 			<div class="absolute h-[400px] w-[400px] -top-24">
 				<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="relative text-primary">
 					<path fill="currentColor" d="M21.6,-39.6C25.4,-35.3,24.1,-24.2,33.3,-16.5C42.5,-8.7,62.2,-4.4,70,4.5C77.8,13.4,73.8,26.8,62.7,31.3C51.6,35.8,33.6,31.3,21.9,40.4C10.3,49.5,5.2,72.1,-1.2,74.2C-7.7,76.4,-15.3,58.1,-25.8,48.4C-36.3,38.6,-49.5,37.5,-54.5,30.8C-59.5,24.2,-56.2,12.1,-53.1,1.8C-49.9,-8.4,-46.9,-16.9,-45,-28.8C-43,-40.8,-42.2,-56.2,-34.9,-58.5C-27.6,-60.9,-13.8,-50,-2.4,-45.8C8.9,-41.6,17.8,-44,21.6,-39.6Z" transform="translate(100 100)" />
@@ -42,45 +42,43 @@ const articles = await fetchApi<Article[]>({
 				<div class="relative bg-secondary h-16 w-16 rounded-full -top-20 left-48" />
 			</div>
 		</div>
-		<div class="max-w-screen-lg mx-auto my-auto py-12 px-24">
-			<h1 class="text-7xl uppercase text-center font-display font-semibold">Home-Organising & Minimalisme</h1>
-			<div class="flex justify-center bg-secondary w-fit gap-[0.1rem] mx-auto mt-4 font-semibold">
-				<div class="bg-quaternary px-10">Projet en cours de développement</div>
-				<div class="bg-quaternary px-10">Début d'activité Janvier 2025</div>
+		<div class="bg-quaternary/90 z-10 mx-auto my-auto p-20">
+			<div class="max-w-screen-lg py-32 px-24">
+				<h1 class="text-7xl uppercase text-center font-display font-semibold">Home-Organising & Minimalisme</h1>
+				<div class="flex justify-center bg-secondary w-fit gap-[0.1rem] mx-auto mt-4 font-semibold">
+					<div class="bg-quaternary px-10">Projet en cours de développement</div>
+					<div class="bg-quaternary px-10">Début d'activité Janvier 2025</div>
+				</div>
+				<div class="flex justify-center mt-8">
+					<button class="bg-quinary text-white rounded-full px-6 py-3 font-semibold uppercase text-xl">Prendre rendez-vous</button>
+				</div>
 			</div>
 		</div>
 	</section>
-	<section class="bg-primary text-white">
-		<div class="max-w-screen-lg mx-auto py-12 px-24">
-			<a href="homi-by-justine/blog/1">Blog</a>
+	<section class="">
+		<div class="sticky top-10">
+			<nav class="mx-auto w-fit bg-primary text-white rounded-full py-5 px-5">
+				<a href="homi-by-justine/blog/1">Blog</a>
+				<a href="homi-by-justine/blog/1">Autre page</a>
+				<a href="homi-by-justine/blog/1">Page autre</a>
+				<a href="homi-by-justine/blog/1">Truc</a>
+			</nav>
 		</div>
-	</section>
-	<section class="bg-quaternary">
-		<div class="max-w-screen-lg mx-auto py-12 px-24">
-			<blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste soluta quas perspiciatis molestias harum rem quia eaque tenetur, nisi sequi quaerat, illum alias repellendus ullam explicabo libero ipsum recusandae itaque.</blockquote>
-			<small class="italic text-right">Author of the quote</small>
-		</div>
-	</section>
-	<section class="bg-secondary">
-		<div class="max-w-screen-lg mx-auto py-12 px-24">
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias hic a eius accusantium asperiores aspernatur, recusandae, totam incidunt dignissimos natus harum repellat distinctio modi libero magnam rem earum voluptatem?</p>
-		</div>
-	</section>
-	<section class="bg-tertiary">
-		<div class="max-w-screen-lg mx-auto py-12 px-24">
-			<div class="flex gap-8">
-				<div class="bg-tertiary-dark h-80 w-80 rounded"></div>
-				<div class="bg-tertiary-dark h-80 w-80 rounded"></div>
-				<div class="bg-tertiary-dark h-80 w-80 rounded"></div>
+		<section class="bg-quaternary text-primary">
+			<div class="max-w-screen-lg mx-auto py-32 px-24">
+				<blockquote class="text-4xl">"Le secret du bonheur n'est pas dans la recherche de plus, mais dans la capacité à jouir de moins."</blockquote>
+				<small class="block italic text-right text-2xl">Socrate</small>
 			</div>
-		</div>
+		</section>
+		<section class="bg-tertiary">
+			<div class="max-w-screen-lg mx-auto py-32 px-24">
+				<div class="flex gap-8 -mt-48">
+					<div class="bg-tertiary-dark h-80 w-80 rounded"></div>
+					<div class="bg-tertiary-dark h-80 w-80 rounded"></div>
+					<div class="bg-tertiary-dark h-80 w-80 rounded"></div>
+				</div>
+			</div>
+		</section>
 	</section>
   </main>
 </Layout>

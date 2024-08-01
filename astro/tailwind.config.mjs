@@ -22,6 +22,9 @@ export default {
         quaternary: {
           DEFAULT: "#fff8e9",
         },
+        quinary: {
+          DEFAULT: "#aa4f9c",
+        },
       },
       fontFamily: {
         display: ["Poppins"],
